@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "175672605274",
+    "firebase_url": "https://btlfirebase-default-rtdb.firebaseio.com",
+    "project_id": "btlfirebase",
+    "storage_bucket": "btlfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175672605274:android:044a16dda7049472ef3663",
+        "android_client_info": {
+          "package_name": "com.example.chatbtl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "175672605274-ac8bs5qkdgsramus984rsihu4q3ct5tc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1PPMYR81Tmw3rWf9Gx7vUOteFmumadV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "175672605274-ac8bs5qkdgsramus984rsihu4q3ct5tc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ChatActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        android:background="#E3EBFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/buttonBack"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="8dp"
+            android:background="@drawable/background_icon"
+            android:src="@drawable/ic_back"
+            app:tint="@color/icon_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imageProfile"
+            app:layout_constraintBottom_toBottomOf="@id/imageProfile"/>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imageProfile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/background_image"
+            app:riv_oval="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/buttonBack"/>
+
+        <View
+            android:id="@+id/viewSupporter"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="@id/imageProfile"
+            app:layout_constraintStart_toEndOf="@id/imageProfile"
+            app:layout_constraintTop_toTopOf="@id/imageProfile"/>
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Duy Đạt"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/text"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/viewSupporter"
+            app:layout_constraintStart_toEndOf="@id/viewSupporter"
+            app:layout_constraintTop_toTopOf="@id/imageProfile"
+            app:layout_constraintEnd_toStartOf="@id/buttonCall" />
+
+        <TextView
+            android:id="@+id/textActive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="Online"
+            android:textColor="@color/online"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintStart_toEndOf="@id/viewSupporter"
+            app:layout_constraintTop_toBottomOf="@id/viewSupporter"
+            app:layout_constraintBottom_toBottomOf="@id/imageProfile"
+            app:layout_constraintWidth_percent="0.65"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/buttonCall"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/background_icon"
+            android:padding="8dp"
+            android:src="@drawable/ic_phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imageProfile"
+            app:layout_constraintBottom_toBottomOf="@id/imageProfile"
+            app:tint="@color/icon_color" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutMain"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/textAlert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutTop">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:padding="16dp"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"/>
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textAlert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="You must be friends to send messages"
+        android:textColor="@color/error"
+        android:textSize="@dimen/text"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/layoutMain"
+        app:layout_constraintBottom_toTopOf="@id/layoutBottom"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonAddFriend"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="0dp"
+        android:text="Add friend"
+        android:textSize="14sp"
+        app:icon="@drawable/ic_add_friend"
+        app:iconGravity="textStart"
+        app:iconPadding="10dp"
+        app:iconSize="16dp"
+        android:gravity="center"
+        android:backgroundTint="@color/secondary_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutTop" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:background="#E3EBFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/inputMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:background="@drawable/background_message"
+            android:hint="Aa"
+            android:textSize="@dimen/text_medium"
+            android:textColor="@color/primary_text"
+            android:maxLines="4"
+            android:inputType="text|textMultiLine"
+            android:ellipsize="end"
+            android:imeOptions="actionDone"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/buttonCamera"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/background_image"
+            android:padding="8dp"
+            android:src="@drawable/ic_camera"
+            app:layout_constraintBottom_toBottomOf="@id/inputMessage"
+            app:layout_constraintStart_toStartOf="@id/inputMessage"
+            app:layout_constraintTop_toTopOf="@id/inputMessage"
+            app:tint="@color/icon_color" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/buttonSent"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"
+            android:background="@drawable/background_image"
+            android:backgroundTint="@color/primary"
+            android:src="@drawable/ic_sent"
+            app:tint="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/inputMessage"
+            app:layout_constraintTop_toTopOf="@id/inputMessage"
+            app:layout_constraintBottom_toBottomOf="@id/inputMessage"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

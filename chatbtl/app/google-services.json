@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "735496764027",
+    "project_id": "chatbtl",
+    "storage_bucket": "chatbtl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735496764027:android:5e8ad130cc845000df00de",
+        "android_client_info": {
+          "package_name": "com.example.chatbtl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735496764027-f7q1ktqplbsr2no86iftgua5sotooi2f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR5LqXz059-1iPJ5JjBO4jZxhWYabo2mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735496764027-f7q1ktqplbsr2no86iftgua5sotooi2f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
